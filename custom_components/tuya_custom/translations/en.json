@@ -18,11 +18,11 @@
         }
       },
       "error": {
-        "invalid_auth": "[%key:common::config_flow::error::invalid_auth%]",
+        "invalid_auth": "Invalid auth]",
         "login_error": "Login error ({code}): {msg}"
       },
       "abort": {
-        "reauth_successful": "[%key:common::config_flow::abort::reauth_successful%]"
+        "reauth_successful": "Reauthentication successful"
       }
     },
     "entity": {
@@ -80,10 +80,10 @@
       },
       "cover": {
         "blind": {
-          "name": "[%key:component::cover::entity_component::blind::name%]"
+          "name": "Blind"
         },
         "curtain": {
-          "name": "[%key:component::cover::entity_component::curtain::name%]"
+          "name": "Curtain"
         },
         "curtain_2": {
           "name": "Curtain 2"
@@ -92,7 +92,7 @@
           "name": "Curtain 3"
         },
         "door": {
-          "name": "[%key:component::cover::entity_component::door::name%]"
+          "name": "Door"
         },
         "door_2": {
           "name": "Door 2"
@@ -106,7 +106,7 @@
           "name": "Backlight"
         },
         "light": {
-          "name": "[%key:component::light::title%]"
+          "name": "Light"
         },
         "light_2": {
           "name": "Light 2"
@@ -120,7 +120,7 @@
       },
       "number": {
         "temperature": {
-          "name": "[%key:component::sensor::entity_component::temperature::name%]"
+          "name": "Temperature"
         },
         "time": {
           "name": "Time"
@@ -194,7 +194,7 @@
       },
       "select": {
         "volume": {
-          "name": "[%key:component::tuya::entity::number::volume::name%]"
+          "name": "Volume"
         },
         "cups": {
           "name": "Cups"
@@ -220,7 +220,7 @@
         "basic_anti_flicker": {
           "name": "Anti-flicker",
           "state": {
-            "0": "[%key:common::state::disabled%]",
+            "0": "Automatic",
             "1": "50 Hz",
             "2": "60 Hz"
           }
@@ -229,8 +229,8 @@
           "name": "Night vision",
           "state": {
             "0": "Automatic",
-            "1": "[%key:common::state::off%]",
-            "2": "[%key:common::state::on%]"
+            "1": "Off",
+            "2": "On"
           }
         },
         "decibel_sensitivity": {
@@ -258,23 +258,23 @@
         "led_type_2": {
           "name": "Light 2 source type",
           "state": {
-            "halogen": "[%key:component::tuya::entity::select::led_type::state::halogen%]",
-            "incandescent": "[%key:component::tuya::entity::select::led_type::state::incandescent%]",
-            "led": "[%key:component::tuya::entity::select::led_type::state::led%]"
+            "halogen": "Halogen",
+            "incandescent": "Incandescent",
+            "led": "LED"
           }
         },
         "led_type_3": {
           "name": "Light 3 source type",
           "state": {
-            "halogen": "[%key:component::tuya::entity::select::led_type::state::halogen%]",
-            "incandescent": "[%key:component::tuya::entity::select::led_type::state::incandescent%]",
-            "led": "[%key:component::tuya::entity::select::led_type::state::led%]"
+            "halogen": "Halogen",
+            "incandescent": "Incandescent",
+            "led": "LED"
           }
         },
         "light_mode": {
           "name": "Indicator light mode",
           "state": {
-            "none": "[%key:common::state::off%]",
+            "none": "\"None\"",
             "pos": "Indicate switch location",
             "relay": "Indicate switch on/off state"
           }
@@ -298,11 +298,11 @@
           "name": "Power on behavior",
           "state": {
             "last": "Remember last state",
-            "memory": "[%key:component::tuya::entity::select::relay_status::state::last%]",
-            "off": "[%key:common::state::off%]",
-            "on": "[%key:common::state::on%]",
-            "power_off": "[%key:common::state::off%]",
-            "power_on": "[%key:common::state::on%]"
+            "memory": "Memory",
+            "off": "Always off",
+            "on": "Always on",
+            "power_off": "Power off",
+            "power_on": "Power on"
           }
         },
         "fingerbot_mode": {
@@ -318,7 +318,7 @@
             "low": "Low",
             "middle": "Middle",
             "high": "High",
-            "closed": "[%key:common::state::closed%]"
+            "closed": "Closed"
           }
         },
         "vacuum_collection": {
@@ -332,7 +332,7 @@
         "vacuum_mode": {
           "name": "Mode",
           "state": {
-            "standby": "[%key:common::state::standby%]",
+            "standby": "Standby",
             "random": "Random",
             "smart": "Smart",
             "wall_follow": "Follow wall",
@@ -446,43 +446,43 @@
       },
       "sensor": {
         "battery": {
-          "name": "[%key:component::sensor::entity_component::battery::name%]"
+          "name": "Battery"
         },
         "voc": {
-          "name": "[%key:component::sensor::entity_component::volatile_organic_compounds::name%]"
+          "name": "VOC"
         },
         "carbon_monoxide": {
-          "name": "[%key:component::sensor::entity_component::carbon_monoxide::name%]"
+          "name": "Carbon monoxide"
         },
         "carbon_dioxide": {
-          "name": "[%key:component::sensor::entity_component::carbon_dioxide::name%]"
+          "name": "Carbon dioxide"
         },
         "illuminance": {
-          "name": "[%key:component::sensor::entity_component::illuminance::name%]"
+          "name": "Illuminance"
         },
         "temperature": {
-          "name": "[%key:component::sensor::entity_component::temperature::name%]"
+          "name": "Temperature"
         },
         "humidity": {
-          "name": "[%key:component::sensor::entity_component::humidity::name%]"
+          "name": "Humidity"
         },
         "pm25": {
-          "name": "[%key:component::sensor::entity_component::pm25::name%]"
+          "name": "\"PM 2.5\""
         },
         "pm1": {
-          "name": "[%key:component::sensor::entity_component::pm1::name%]"
+          "name": "PM 1"
         },
         "pm10": {
-          "name": "[%key:component::sensor::entity_component::pm10::name%]"
+          "name": "PM 10"
         },
         "current": {
-          "name": "[%key:component::sensor::entity_component::current::name%]"
+          "name": "Current"
         },
         "power": {
-          "name": "[%key:component::sensor::entity_component::power::name%]"
+          "name": "Power"
         },
         "voltage": {
-          "name": "[%key:component::sensor::entity_component::voltage::name%]"
+          "name": "Voltage"
         },
         "battery_state": {
           "name": "Battery state"
@@ -491,7 +491,7 @@
           "name": "Gas"
         },
         "formaldehyde": {
-          "name": "[%key:component::tuya::entity::binary_sensor::formaldehyde::name%]"
+          "name": "Formaldehyde"
         },
         "luminosity": {
           "name": "Luminosity"
@@ -512,7 +512,7 @@
           "name": "Remaining time"
         },
         "methane": {
-          "name": "[%key:component::tuya::entity::binary_sensor::methane::name%]"
+          "name": "Methane"
         },
         "total_energy": {
           "name": "Total energy"
@@ -605,7 +605,7 @@
             "reserve_1": "Reserve 1",
             "reserve_2": "Reserve 2",
             "reserve_3": "Reserve 3",
-            "standby": "[%key:common::state::standby%]",
+            "standby": "Standby",
             "warm": "Heat preservation"
           }
         },
