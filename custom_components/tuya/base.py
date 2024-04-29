@@ -31,6 +31,11 @@ class IntegerTypeData:
     unit: str | None = None
     type: str | None = None
 
+    # Default base during scaling is 10 according to specification:
+    # https://developer.tuya.com/en/docs/iot/datatypedescription?id=K9i5ql2jo7j1k
+    base_value: int = 10
+    base_step: int = 10
+
     @property
     def max_scaled(self) -> float:
         """Return the max scaled."""
