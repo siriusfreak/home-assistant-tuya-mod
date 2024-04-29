@@ -1,7 +1,7 @@
 {
   "domain": "tuya",
-  "name": "Tuya",
-  "codeowners": ["@Tuya", "@zlinoliver", "@frenck"],
+  "name": "Tuya Custom",
+  "codeowners": ["@siriusfreak"],
   "config_flow": true,
   "dependencies": ["ffmpeg"],
   "dhcp": [
