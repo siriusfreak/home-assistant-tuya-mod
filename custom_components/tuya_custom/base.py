@@ -80,7 +80,7 @@ class IntegerTypeData:
         return remap_value(value, from_min, from_max, self.min, self.max, reverse)
 
     @classmethod
-    def from_json(cls, dpcode: DPCode, data: str) -> IntegerTypeData | None:
+    def from_json(cls, dpcode: DPCode, product_id: str, data: str) -> IntegerTypeData | None:
         """Load JSON string and return a IntegerTypeData object."""
         if not (parsed := json.loads(data)):
             return None
@@ -245,7 +245,7 @@ class TuyaEntity(Entity):
                 ):
                     if not (
                         integer_type := IntegerTypeData.from_json(
-                            dpcode, getattr(self.device, key)[dpcode].values
+                            dpcode, self.device.product_id, getattr(self.device, key)[dpcode].values
                         )
                     ):
                         continue
