@@ -17,6 +17,7 @@ from homeassistant.helpers.entity import Entity
 from .const import DOMAIN, LOGGER, TUYA_HA_SIGNAL_UPDATE_ENTITY, DPCode, DPType
 from .util import remap_value
 
+from .device_specific import DEVICE_SPECIFIC_INT_BASE
 
 @dataclass
 class IntegerTypeData:
@@ -79,7 +80,7 @@ class IntegerTypeData:
         if not (parsed := json.loads(data)):
             return None
 
-        return cls(
+        result: IntegerTypeData = cls(
             dpcode,
             min=int(parsed["min"]),
             max=int(parsed["max"]),
@@ -89,6 +90,13 @@ class IntegerTypeData:
             type=parsed.get("type"),
         )
 
+        # Some devices use other bases than default
+        if product_id in DEVICE_SPECIFIC_INT_BASE:
+            device: dict[str, int] = DEVICE_SPECIFIC_INT_BASE[product_id]
+            result.base_value = device["base_value"]
+            result.base_step = device["base_step"]
+
+        return result
 
 @dataclass
 class EnumTypeData:
