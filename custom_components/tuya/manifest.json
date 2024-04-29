@@ -1,5 +1,5 @@
 {
-  "domain": "tuya",
+  "domain": "tuya-custom",
   "name": "Tuya Custom",
   "codeowners": ["@siriusfreak"],
   "config_flow": true,
@@ -39,7 +39,6 @@
       "macaddress": "D81F12*"
     }
   ],
-  "documentation": "https://www.home-assistant.io/integrations/tuya",
   "integration_type": "hub",
   "iot_class": "cloud_push",
   "loggers": ["tuya_iot"],
