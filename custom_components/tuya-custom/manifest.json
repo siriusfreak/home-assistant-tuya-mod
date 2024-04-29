@@ -1,5 +1,5 @@
 {
-  "domain": "tuya_custom",
+  "domain": "tuya-custom",
   "name": "Tuya Custom",
   "codeowners": ["@siriusfreak"],
   "config_flow": true,
