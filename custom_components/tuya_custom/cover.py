@@ -243,7 +243,7 @@ class TuyaCoverEntity(TuyaEntity, CoverEntity):
             return None
 
         return round(
-            self._current_position.remap_value_to(position, 0, 100, reverse=True)
+            self._current_position.remap_value_to(position, 0, 100, reverse=False)
         )
 
     @property
@@ -298,7 +298,7 @@ class TuyaCoverEntity(TuyaEntity, CoverEntity):
                 {
                     "code": self._set_position.dpcode,
                     "value": round(
-                        self._set_position.remap_value_from(100, 0, 100, reverse=True),
+                        self._set_position.remap_value_from(100, 0, 100, reverse=False),
                     ),
                 }
             )
@@ -322,7 +322,7 @@ class TuyaCoverEntity(TuyaEntity, CoverEntity):
                 {
                     "code": self._set_position.dpcode,
                     "value": round(
-                        self._set_position.remap_value_from(0, 0, 100, reverse=True),
+                        self._set_position.remap_value_from(0, 0, 100, reverse=False),
                     ),
                 }
             )
@@ -342,7 +342,7 @@ class TuyaCoverEntity(TuyaEntity, CoverEntity):
                     "code": self._set_position.dpcode,
                     "value": round(
                         self._set_position.remap_value_from(
-                            kwargs[ATTR_POSITION], 0, 100, reverse=True
+                            kwargs[ATTR_POSITION], 0, 100, reverse=False
                         )
                     ),
                 }
@@ -373,7 +373,7 @@ class TuyaCoverEntity(TuyaEntity, CoverEntity):
                     "code": self._tilt.dpcode,
                     "value": round(
                         self._tilt.remap_value_from(
-                            kwargs[ATTR_TILT_POSITION], 0, 100, reverse=True
+                            kwargs[ATTR_TILT_POSITION], 0, 100, reverse=False
                         )
                     ),
                 }
