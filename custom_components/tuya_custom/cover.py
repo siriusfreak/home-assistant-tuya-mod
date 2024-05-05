@@ -152,8 +152,10 @@ async def async_setup_entry(
     def async_discover_device(device_ids: list[str]) -> None:
         """Discover and add a discovered tuya cover."""
         entities: list[TuyaCoverEntity] = []
+
         for device_id in device_ids:
             device = hass_data.manager.device_map[device_id]
+            LOGGER.error("Found device %s", self.device.category)
             if descriptions := COVERS.get(device.category):
                 entities.extend(
                     TuyaCoverEntity(device, hass_data.manager, description)
