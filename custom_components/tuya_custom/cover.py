@@ -23,7 +23,7 @@ from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from . import HomeAssistantTuyaData
 from .base import IntegerTypeData, TuyaEntity
 from .const import DOMAIN, TUYA_DISCOVERY_NEW, DPCode, DPType
-
+from .device_specific import DEVICE_SPECIFIC_COVER_REVERSE
 
 @dataclass(frozen=True)
 class TuyaCoverEntityDescription(CoverEntityDescription):
@@ -36,6 +36,7 @@ class TuyaCoverEntityDescription(CoverEntityDescription):
     open_instruction_value: str = "open"
     close_instruction_value: str = "close"
     stop_instruction_value: str = "stop"
+    reversed: bool = False
 
 
 COVERS: dict[str, tuple[TuyaCoverEntityDescription, ...]] = {
@@ -155,7 +156,8 @@ async def async_setup_entry(
 
         for device_id in device_ids:
             device = hass_data.manager.device_map[device_id]
-            LOGGER.error("Found device %s", self.device.category)
+            if device.product_id in DEVICE_SPECIFIC_COVER_REVERSE:
+                device.reversed = True
             if descriptions := COVERS.get(device.category):
                 entities.extend(
                     TuyaCoverEntity(device, hass_data.manager, description)
